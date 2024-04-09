@@ -1,42 +1,43 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+#weatherSection {
+  display: flex;
+  justify-content: center;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+.categoriesContainer {
+  height: 375px;
+  background-color: #6c799a;
+  width: 650px;
+  margin-top: auto;
+  margin-bottom: auto;
+  /* margin-right: 10px; */
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 0 20px 20px 0;
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.categories {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.categories p {
+  line-height: 150%;
+  padding: 0 20px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+.categories p:hover {
+  background-color: antiquewhite;
+}
+.categories p:first-child {
+  border-radius: 0 0 0 20px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+.categories p:last-child {
+  border-radius: 0 0 20px 0;
 }

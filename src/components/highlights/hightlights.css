@@ -1,0 +1,50 @@
+#highlightContainer {
+  height: 350px;
+  width: 600px;
+  background-color: aqua;
+  display: grid;
+  gap: 5px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto 1fr 1fr;
+  border-radius: 0 20px 20px 0;
+}
+
+.icons {
+  width: 40px;
+}
+
+.highlightsTitle {
+  grid-column: span 4;
+  line-height: 150%;
+  text-align: center;
+  padding: 10px 0;
+}
+.pollutantsContainer {
+  grid-row: 2;
+  grid-column: 1/3;
+}
+.timesContainer {
+  grid-column: span 2;
+  grid-row: 2;
+}
+.time {
+  display: flex;
+  width: 200px;
+  gap: 20px;
+  justify-content: space-around;
+}
+.time div {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+h4 {
+  text-align: center;
+  line-height: 150%;
+}
+.eachHighlight {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 10px;
+}

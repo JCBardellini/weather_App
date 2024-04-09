@@ -1,0 +1,16 @@
+#todaysWeatherContainer {
+  width: 250px;
+  background-color: antiquewhite;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 20px;
+}
+.weatherUpperContainer,
+.weatherLowerContainer {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}

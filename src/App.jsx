@@ -1,35 +1,60 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect, useState } from "react";
+import "./App.css";
+import Highlights from "./components/highlights/Highlights";
+import SearchInput from "./components/searchInput/searchInput";
+import TodayWeather from "./components/todayWeather/TodayWeather";
+import axios from "axios";
+import Hourly from "./components/hourly/hourly";
+import DayForecast from "./components/dayForecast/dayForecast";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const weatherApiKey = "df1fd18342690d43086da43326902da5";
+  const [geoLocationData, setGeoLocationData] = useState({});
+  const [selectedCategory, setSelectedCategory] = useState("highlights");
+
+  // function that gets the users geoLocation
+  const geoLocation = () => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        const { latitude, longitude } = position.coords;
+        setGeoLocationData({ latitude, longitude });
+      });
+    } else {
+      console.log("No Geolocation Support");
+    }
+  };
+
+  useEffect(() => {
+    geoLocation();
+  }, []);
+
+  console.log(geoLocationData);
 
   return (
     <>
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <SearchInput />
+        <div id="weatherSection">
+          <TodayWeather />
+          <div className="categoriesContainer">
+            <div className="categories">
+              <p onClick={() => setSelectedCategory("highlights")}>
+                Highlights
+              </p>
+              <p onClick={() => setSelectedCategory("hourly")}>Hourly</p>
+              <p onClick={() => setSelectedCategory("dayForecast")}>
+                Day Forecast
+              </p>
+            </div>
+            {/* Conditional rendering based on selectedCategory */}
+            {selectedCategory === "highlights" && <Highlights />}
+            {selectedCategory === "hourly" && <Hourly />}
+            {selectedCategory === "dayForecast" && <DayForecast />}
+          </div>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
