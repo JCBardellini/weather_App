@@ -10,61 +10,62 @@ import "./hightlights.css";
 
 const Highlights = () => {
   return (
-    <section id="highlightContainer">
-      <h3 className="highlightsTitle">Today's Highlight</h3>
-      <div className="pollutantsContainer">
-        <img src={Wind} alt="wind Icon" className="icons" />
-        <p>Good or Bad</p>
-        <div>
+    <section className="overallContainerHighlights">
+      <h3>Today's Highlight</h3>
+      <div className="highlightsContainer">
+        <div className="pollutantsContainer">
           <h4>Pollutants</h4>
-          <ul>
-            <li>O3: num</li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
-        </div>
-      </div>
-      <div className="timesContainer">
-        <h4>Sunrise & Sunset</h4>
-        <div className="time">
-          <div>
-            <img src={Sunrise} alt="Sunrise Icon" className="icons" />
-            <p>Time</p>
-          </div>
-          <div>
-            <img src={Sunset} alt="Sunset Icon" className="icons" />
-            <p>Time</p>
+          <div className="eachPollutantContainer">
+            <img src={Wind} alt="wind Icon" className="icons" />
+            <p>Good</p>
+            <ul>
+              <li>O3: num</li>
+              <li>SO2: num</li>
+              <li>NO2: num</li>
+              <li>CO: num</li>
+            </ul>
           </div>
         </div>
-      </div>
-      <div>
-        <h4>Humidity</h4>
-        <div className="eachHighlight">
-          <img src={Humidity} alt="Humidity Icon" className="icons" />
-          <p>88%</p>
+        <div className="timeHighlightContainer">
+          <h4>Sunrise & Sunset</h4>
+          <div className="time">
+            <div className="timeHighlight">
+              <img src={Sunrise} alt="Sunrise Icon" className="icons" />
+              <p>Time</p>
+            </div>
+            <div className="timeHighlight">
+              <img src={Sunset} alt="Sunset Icon" className="icons" />
+              <p>Time</p>
+            </div>
+          </div>
         </div>
-      </div>
-      <div>
-        <h4>Pressure</h4>
-        <div className="eachHighlight">
-          <img src={Pressure} alt="Pressure Icon" className="icons" />
-          <p>30.03inHg</p>
+        <div className="eachHighlightContainer">
+          <h4>Humidity</h4>
+          <div className="eachHighlight">
+            <img src={Humidity} alt="Humidity Icon" className="icons" />
+            <p>88%</p>
+          </div>
         </div>
-      </div>
-      <div>
-        <h4>Pressure</h4>
-        <div className="eachHighlight">
-          <img src={Visibility} alt="Visibility Icon" className="icons" />
-          <p>30.03inHg</p>
+        <div className="eachHighlightContainer">
+          <h4>Pressure</h4>
+          <div className="eachHighlight">
+            <img src={Pressure} alt="Pressure Icon" className="icons" />
+            <p>30.03inHg</p>
+          </div>
         </div>
-      </div>
-      <div>
-        <h4>Feels Like</h4>
-        <div className="eachHighlight">
-          <img src={FeelsLike} alt="Temperature Icon" className="icons" />
-          <p>30.03inHg</p>
+        <div className="eachHighlightContainer">
+          <h4>Pressure</h4>
+          <div className="eachHighlight">
+            <img src={Visibility} alt="Visibility Icon" className="icons" />
+            <p>30.03inHg</p>
+          </div>
+        </div>
+        <div className="eachHighlightContainer">
+          <h4>Feels Like</h4>
+          <div className="eachHighlight">
+            <img src={FeelsLike} alt="Temperature Icon" className="icons" />
+            <p>30.03inHg</p>
+          </div>
         </div>
       </div>
     </section>
