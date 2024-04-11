@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import "./App.css";
 import Highlights from "./components/highlights/Highlights";
 import SearchInput from "./components/searchInput/searchInput";
@@ -6,30 +6,14 @@ import TodayWeather from "./components/todayWeather/TodayWeather";
 import axios from "axios";
 import Hourly from "./components/hourly/hourly";
 import DayForecast from "./components/dayForecast/dayForecast";
+import { primaryContext } from "./Context/primaryContext";
 
 function App() {
-  const weatherApiKey = "df1fd18342690d43086da43326902da5";
-  const [geoLocationData, setGeoLocationData] = useState({});
   const [selectedCategory, setSelectedCategory] = useState("highlights");
 
-  // function that gets the users geoLocation
-  const geoLocation = () => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition((position) => {
-        const { latitude, longitude } = position.coords;
-        setGeoLocationData({ latitude, longitude });
-      });
-    } else {
-      console.log("No Geolocation Support");
-    }
-  };
-
-  useEffect(() => {
-    geoLocation();
-  }, []);
-
-  console.log(geoLocationData);
-
+  const { weatherData } = useContext(primaryContext);
+  // catching the undefined to return nothing  until data is collected
+  if (!weatherData) return <></>;
   return (
     <>
       <div>

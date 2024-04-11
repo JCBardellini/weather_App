@@ -4,7 +4,7 @@ import "./hourly.css";
 const Hourly = () => {
   return (
     <section className="overallContainer">
-      <h3>Hourly Weather</h3>
+      <h3>Hourly Forecast</h3>
       <div className="forecastContainer">
         <div className="eachForecastContainer">
           <img src="" alt="Icon" />

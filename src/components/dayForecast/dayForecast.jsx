@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import { primaryContext } from "../../Context/primaryContext";
 
 const DayForecast = () => {
+  const { weatherData } = useContext(primaryContext);
+  console.log(weatherData);
   return (
     <section className="overallContainer">
       <h3>Day Forecast</h3>

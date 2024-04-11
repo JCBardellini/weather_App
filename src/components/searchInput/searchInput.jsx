@@ -1,14 +1,17 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./searchInput.css";
+import { primaryContext } from "../../Context/primaryContext";
 
 const SearchInput = () => {
   const [search, setSearch] = useState("");
+
+  const { setCityName } = useContext(primaryContext); // allows us to use our useContext
 
   const handleSearch = (e) => {
     e.preventDefault();
     // Implement your search logic here using the search state
     console.log("Search query:", search);
-
+    setCityName(search);
     setSearch("");
   };
 
