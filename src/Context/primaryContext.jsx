@@ -9,20 +9,16 @@ const PrimaryProvider = ({ children }) => {
   const [weatherData, setWeatherData] = useState();
   const [hourlyData, setHourlyData] = useState();
   const [airPollutionData, setAirPollutionData] = useState();
+  const [dailyData, setDailyData] = useState();
   const [cityName, setCityName] = useState("Seattle");
 
   useEffect(() => {
     const dataFromWeatherApi = () => {
       const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${weatherApiKey}`;
-      const hourlyUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${weatherApiKey}`;
       try {
         const data = axios.get(apiUrl).then((res) => {
           const response = res.data;
           setWeatherData(response);
-        });
-        const hourlyData = axios.get(hourlyUrl).then((res) => {
-          const hourlyResponse = res.data;
-          const hourlyListData = hourlyResponse.list.slice(2, 8);
         });
       } catch (error) {
         console.error("error in obtaining the API call" + error);
@@ -39,11 +35,17 @@ const PrimaryProvider = ({ children }) => {
         const { lon, lat } = coord;
         // console.log(lon, lat);
         const airPollutionUrl = `https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${weatherApiKey}`;
+        const hourlyUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${weatherApiKey}`;
         try {
           axios.get(airPollutionUrl).then((res) => {
             const airPollutionResponse = res.data;
-            // console.log(airPollutionResponse);
             setAirPollutionData(airPollutionResponse);
+          });
+          const hourlyData = axios.get(hourlyUrl).then((res) => {
+            const hourlyResponse = res.data;
+            const hourlyListData = hourlyResponse.list.slice(0, 5);
+            setHourlyData(hourlyListData);
+            setDailyData(hourlyResponse);
           });
         } catch (error) {
           console.error("Error in obtaining the air pollution data:", error);
@@ -52,7 +54,6 @@ const PrimaryProvider = ({ children }) => {
     }
   }, [weatherData, weatherApiKey]);
 
-  // console.log(weatherData);
   return (
     <primaryContext.Provider
       value={{
@@ -64,6 +65,8 @@ const PrimaryProvider = ({ children }) => {
         setAirPollutionData,
         hourlyData,
         setHourlyData,
+        dailyData,
+        setDailyData,
       }}
     >
       {children}

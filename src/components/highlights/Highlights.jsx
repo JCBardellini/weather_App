@@ -14,7 +14,7 @@ const Highlights = () => {
   // console.log(weatherData);
   // console.log(airPollutionData);
   const pollutionData = airPollutionData.list[0].components;
-  console.log(pollutionData);
+  // console.log(pollutionData);
 
   const meterToMiles = 0.000621371;
   const visibility = weatherData.visibility * meterToMiles;

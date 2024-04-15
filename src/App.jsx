@@ -11,9 +11,9 @@ import { primaryContext } from "./Context/primaryContext";
 function App() {
   const [selectedCategory, setSelectedCategory] = useState("highlights");
 
-  const { weatherData } = useContext(primaryContext);
+  const { weatherData, airPollutionData } = useContext(primaryContext);
   // catching the undefined to return nothing  until data is collected
-  if (!weatherData) return <></>;
+  if (!weatherData || !airPollutionData) return <></>;
   return (
     <>
       <div>
