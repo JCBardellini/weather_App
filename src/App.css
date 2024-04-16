@@ -3,14 +3,22 @@
   margin: 0;
   padding: 0;
 }
-
+.weather {
+  background-color: #312f2f;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
 #weatherSection {
   display: flex;
   justify-content: center;
 }
 .categoriesContainer {
   height: 375px;
-  background-color: #6c799a;
+  background-color: #cdcdcd;
   width: 650px;
   margin-top: auto;
   margin-bottom: auto;
@@ -28,11 +36,11 @@
 .categories p {
   line-height: 150%;
   padding: 0 20px;
-  border: 1px solid black;
+  border: 1px solid aliceblue;
   cursor: pointer;
 }
 .categories p:hover {
-  background-color: antiquewhite;
+  background-color: #7c7c7c;
 }
 .categories p:first-child {
   border-radius: 0 0 0 20px;
@@ -40,4 +48,11 @@
 
 .categories p:last-child {
   border-radius: 0 0 20px 0;
+}
+p,
+li,
+h2,
+h3,
+h4 {
+  color: aliceblue;
 }

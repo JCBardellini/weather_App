@@ -24,7 +24,8 @@
   padding: 0 10px;
 }
 .timeHighlightContainer {
-  background-color: gainsboro;
+  background-color: #312f2f2e;
+  box-shadow: 1px 1px 5px #312f2f8a;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -34,7 +35,8 @@
   grid-column: span 2;
 }
 .pollutantsContainer {
-  background-color: gainsboro;
+  background-color: #312f2f2e;
+  box-shadow: 1px 1px 5px #312f2f8a;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -62,7 +64,8 @@
   width: 130px;
 }
 .eachHighlightContainer {
-  background-color: gainsboro;
+  background-color: #312f2f2e;
+  box-shadow: 1px 1px 5px #312f2f8a;
   display: flex;
   flex-direction: column;
   text-align: center;

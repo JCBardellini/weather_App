@@ -9,8 +9,7 @@ const SearchInput = () => {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    // Implement your search logic here using the search state
-    console.log("Search query:", search);
+    // console.log("Search query:", search);
     setCityName(search);
     setSearch("");
   };

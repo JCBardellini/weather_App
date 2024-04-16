@@ -16,7 +16,7 @@ function App() {
   if (!weatherData || !airPollutionData) return <></>;
   return (
     <>
-      <div>
+      <div className="weather">
         <SearchInput />
         <div id="weatherSection">
           <TodayWeather />

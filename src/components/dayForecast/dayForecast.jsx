@@ -33,7 +33,7 @@ const DayForecast = () => {
     ];
     const date = new Date(timestamp * 1000);
     const dayOfTheWeekIndex = date.getDay();
-    return daysOfWeek[dayOfTheWeekIndex]; // Return the day of the week string
+    return daysOfWeek[dayOfTheWeekIndex];
   };
 
   return (
