@@ -4,7 +4,7 @@
   padding: 0;
 }
 .weather {
-  background-color: #312f2f;
+  background: linear-gradient(45deg, #d8c3e4, #b8e1f5);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,7 +18,7 @@
 }
 .categoriesContainer {
   height: 375px;
-  background-color: #cdcdcd;
+  background-color: #d1a3c4b2;
   width: 650px;
   margin-top: auto;
   margin-bottom: auto;
@@ -40,7 +40,7 @@
   cursor: pointer;
 }
 .categories p:hover {
-  background-color: #7c7c7c;
+  background-color: #d31a1a2e;
 }
 .categories p:first-child {
   border-radius: 0 0 0 20px;

@@ -1,6 +1,6 @@
 #todaysWeatherContainer {
   width: 250px;
-  background-color: rgb(117, 117, 117);
+  background: linear-gradient(45deg, #f5a3b7, #a689d1);
   height: 400px;
   display: flex;
   flex-direction: column;
